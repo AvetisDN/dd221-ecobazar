@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+[class*="display-"] {
+  font: 72px / 120% Poppins;
+}
+[class*="h1-"] {
+  font: 56px / 120% Poppins;
+}
+[class*="h2-"] {
+  font: 48px / 120% Poppins;
+}
+[class*="h3-"] {
+  font: 40px / 120% Poppins;
+}
+[class*="h4-"] {
+  font: 36px / 120% Poppins;
+}
+[class*="h5-"] {
+  font: 32px / 120% Poppins;
+}
+
+[class*="body-2xl-"] {
+  font: 24px / 150% Poppins;
+}
+[class*="body-xl-"] {
+  font: 20px / 150% Poppins;
+}
+[class*="body-lg-"] {
+  font: 18px / 150% Poppins;
+}
+[class*="body-md-"] {
+  font: 16px / 150% Poppins;
+}
+[class*="body-sm-"] {
+  font: 14px / 150% Poppins;
+}
+[class*="body-xs-"] {
+  font: 12px / 130% Poppins;
+}
+
+.caps-2xl {
+  font: 24px / 120% "Indie Flower";
+}
+.caps-xl {
+  font: 16px / 120% "Indie Flower";
+}
+.caps-lg {
+  font: 16px / 100% Poppins;
+}
+.caps-md {
+  font: 14px / 100% Poppins;
+}
+.caps-sm {
+  font: 12px / 100% Poppins;
+}
+.caps-xs {
+  font: 10px / 100% Poppins;
+}
+
+[class*="-400"] {
+  font-weight: 400;
+}
+[class*="-500"] {
+  font-weight: 500;
+}
+[class*="-600"] {
+  font-weight: 600;
+}
