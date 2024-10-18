@@ -3,7 +3,7 @@
     <div class="container topline body-xs-400">
       <div class="left">
         <i class="icon-map-pin"></i>
-        Store Location: Lincoln- 344, Illinois, Chicago, USA
+        Store Location: Lukaku 34, Harare, Zimbabwe
       </div>
       <div class="right">
         <Select :options="['Eng', 'Ru']" />
