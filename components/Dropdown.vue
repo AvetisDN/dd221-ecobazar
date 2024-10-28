@@ -1,25 +1,33 @@
 <template>
   <div class="hidden-overlay" v-if="show" @click="show = false"></div>
   <div class="select" :class="{ opened: show }">
-    <h4 class="body-xs-400" @click="toggleSelect">
-      {{ selected }}
+    <NuxtLink
+      v-if="menuItem.url"
+      :to="menuItem.url"
+      class="body-xs-400 nav-link"
+      @click="toggleSelect"
+    >
+      {{ menuItem.name }}
+    </NuxtLink>
+    <h4
+      v-else
+      :to="menuItem.url"
+      class="body-xs-400 nav-link dropdown"
+      @click="toggleSelect"
+    >
+      {{ menuItem.name }}
     </h4>
-    <ul v-if="options && show">
-      <li
-        v-for="option in options"
-        @click="selectOption(option)"
-        :class="{ active: option === selected }"
-      >
-        {{ option }}
+    <ul v-if="menuItem.items && show">
+      <li v-for="option in menuItem.items" @click="navigateTo(option.url)">
+        {{ option.name }}
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
-const props = defineProps(["options"]);
+const props = defineProps(["menuItem"]);
 
-const selected = ref(props.options[0]);
 const show = ref(false);
 
 function toggleSelect() {
@@ -46,7 +54,7 @@ function selectOption(opt) {
   &.opened {
     z-index: 100;
   }
-  h4 {
+  .nav-link {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -54,7 +62,7 @@ function selectOption(opt) {
     user-select: none;
     font-size: inherit;
     font-weight: inherit;
-    &::after {
+    &.dropdown::after {
       font-family: "icomoon" !important;
       content: "\e905";
     }
@@ -63,14 +71,14 @@ function selectOption(opt) {
     list-style: none;
     padding: 0;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 100%;
     min-width: 100%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     background-color: var(--gray-white);
-    padding: 2px 0;
+    padding: 6px;
     li {
-      padding: 2px 6px;
+      padding: 4px 6px;
       cursor: pointer;
       transform: 0.3s ease;
       user-select: none;
